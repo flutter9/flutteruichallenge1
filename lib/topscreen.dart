@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sparkline/flutter_sparkline.dart';
+
+final firstColor = Color(0xffc10000);
+final secondColor = Colors.red;
 
 class TopScreen extends StatelessWidget {
+
+  var data =[0.0,0.2,0.0,0.3,0.8,1.0,0.3,0.5,0.3,0.9,0.5,0.6,0.4,0.5,-0.2,0.5];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -9,7 +15,9 @@ class TopScreen extends StatelessWidget {
         children: <Widget>[
           Container(
             height: 300,
-            decoration: BoxDecoration(color: Colors.red, boxShadow: [
+            decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [firstColor, secondColor]),
+              boxShadow: [
               BoxShadow(
                 color: Colors.black12,
                 offset: Offset(0.0, 10),
@@ -28,6 +36,7 @@ class TopScreen extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 10),
                   child: Row(
                     children: <Widget>[
+                      SizedBox(width: 60,),
                       Expanded(
                         flex: 5,
                         child: Center(
@@ -35,7 +44,8 @@ class TopScreen extends StatelessWidget {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
-                                  fontWeight: FontWeight.bold)),
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat')),
                         ),
                       ),
                       Expanded(
@@ -80,7 +90,8 @@ class TopScreen extends StatelessWidget {
                                         '291',
                                         style: TextStyle(
                                             fontSize: 36,
-                                            fontWeight: FontWeight.bold),
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Montserrat')
                                       ),
                                       SizedBox(
                                         width: 10,
@@ -89,7 +100,8 @@ class TopScreen extends StatelessWidget {
                                         '-12%',
                                         style: TextStyle(
                                             color: Colors.orange,
-                                            fontWeight: FontWeight.bold),
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Montserrat'),
                                       )
                                     ],
                                   ),
@@ -99,6 +111,7 @@ class TopScreen extends StatelessWidget {
                                     children: <Widget>[
                                       Text(
                                         'Available',
+                                        style: TextStyle(fontFamily: 'Montserrat'),
                                       )
                                     ],
                                   )
@@ -118,7 +131,8 @@ class TopScreen extends StatelessWidget {
                                         '-49%',
                                         style: TextStyle(
                                             color: Colors.red,
-                                            fontWeight: FontWeight.bold),
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Montserrat'),
                                       ),
                                       SizedBox(
                                         width: 10,
@@ -127,7 +141,8 @@ class TopScreen extends StatelessWidget {
                                         '481',
                                         style: TextStyle(
                                             fontSize: 36,
-                                            fontWeight: FontWeight.bold),
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'Montserrat'),
                                       ),
                                     ],
                                   ),
@@ -137,6 +152,7 @@ class TopScreen extends StatelessWidget {
                                     children: <Widget>[
                                       Text(
                                         'Requests',
+                                        style: TextStyle(fontFamily: 'Montserrat'),
                                       )
                                     ],
                                   )
@@ -150,7 +166,15 @@ class TopScreen extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Image.asset('assets/chart.png', width: 200,),
+                            // Image.asset('assets/chart.png', width: 200,),
+                            Container(
+                              height: 50,
+                              child: Sparkline(
+                                data: data,
+                                lineColor: Colors.red,
+                                pointsMode: PointsMode.none,
+                              ),
+                            )
                           ],
                         )
                       ],
