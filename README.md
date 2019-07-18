@@ -1,17 +1,13 @@
 # flutteruichallenge1
 
-A new Flutter project.
+Trying to design iBlood App from project 365 design https://project365.design
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a starting point for designing UI.
 
-A few resources to get you started if this is your first Flutter project:
+A few resources to get you started with this project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [iBlood mockup] (https://project365.design/2018/12/27/day-361-blood-donation-app)
+- [Tutorial- part1] (https://youtu.be/w0jjFZpbn9E)
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
-# flutteruichallenge1
